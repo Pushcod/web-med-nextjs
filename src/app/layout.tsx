@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={'${rpbptp.variable} ${osvald.variable} w-full h-full text-black' }>
         <div className="__next">
           <Header/>
-            <main className="main w-full bg-zinc-100" id="main">
+            <main className="main w-full bg-blue-100" id="main">
               <div className="w-full" id="mainPage">
               {children}
               </div>
