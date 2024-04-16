@@ -3,7 +3,7 @@ import React from 'react';
 
 const menuLinks = [
   { label: 'Главная', url: '/' },
-  { label: 'Врачи', url: '/about' },
+  { label: 'Врачи', url: '/doctors' },
   { label: 'Услуги', url: '/sales' },
   { label: 'Записи', url: '/catalog' },
   { label: 'Специализация', url: '/articles' },

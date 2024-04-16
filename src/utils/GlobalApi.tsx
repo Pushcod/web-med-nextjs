@@ -11,7 +11,9 @@ const axiosClient = axios.create({
 
     const getSpecilization = () => axiosClient.get('/specilizations?populate=*');
 
-    const getDoctor = () => axiosClient.get('/doctors?populate=*');
+    const getDoctor = () => axiosClient.get('/doctors?sort[]=id:desc&populate=*');
+    
+    const getSingleDoctor = (id) => axiosClient.get('/doctors?filters[slug][$eqi]=' + id + '&populate=*');
 
     const getSpec = () => axiosClient.get('/specs?populate=*');
 
@@ -20,10 +22,18 @@ const axiosClient = axios.create({
     const getFooter = () => axiosClient.get('/footers?populate=*');
 
 
+
+    const createOrder = (data) => axiosClient.post('/orders', data);
+    const createJob = (data) => axiosClient.post('/jobs', data);
+
+
 export default{
     getSpecilization,
     getDoctor,
     getSpec,
     getService,
     getFooter,
+    getSingleDoctor,
+    createOrder,
+    createJob,
 }

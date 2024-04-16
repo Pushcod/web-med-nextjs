@@ -1,8 +1,13 @@
+"use client";
+import useFooter from '@/Hooks/useFooter';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react'
 
 const Footer = () => {
+
+  const setFooterList = useFooter();
+
   return (
     <footer className='w-full h-[70px]'>
       <div className="container mx-auto h-full flex items-center">
@@ -11,11 +16,11 @@ const Footer = () => {
               <Image src='/assets/img/logo.svg' alt='Логотип сайта' width={200} height={50} className='w-full h-full' />
           </Link>
           <ul className="inline-flex gap-5">
-              {/* {setFlinkList.length > 0 ? setFlinkList.map((item, index) => {
+              {setFooterList.length > 0 ? setFooterList.map((item, index) => {
                   return (
                          
-                      <Link key={index} href={item.attributes?.link} className='group w-[50px] h-[50px] m-0 border border-zinc-800 bg-orange-600 rounded-xl p-1 hover:scale-50'>
-                        <Image src={process.env.NEXT_PUBLIC_STRAPI_BACKEND_URL + item.attributes?.iconsvg?.data.attributes?.url} alt='Логотип сайта' width={50} height={50} className='w-full h-full m-0 p-0 rounded-xl' />
+                      <Link key={index} href='/' className='group w-[50px] h-[50px] m-0 bg-blue-200 rounded-xl p-1'>
+                        <Image src={process.env.NEXT_PUBLIC_STRAPI_BACKEND_URL + item.attributes?.icon?.data.attributes?.url ?? ''} alt='Логотип сайта' width={20} height={20} className='w-full h-full m-0 p-0 rounded-xl fill-red-700' />
                       </Link>  
                     
                   )
@@ -26,7 +31,7 @@ const Footer = () => {
                     <div key={index} className="w-[50px] h-[50px] rounded-xl bg-zinc-800 animate-pulse"></div>
                 );
               })
-              } */}
+              }
           </ul>
 
         </div>
